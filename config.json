@@ -1,0 +1,10 @@
+{
+    "datafile": [
+        {
+            "lang": "mn",
+            "url": "https://svn.apache.org/repos/bigdata/opennlp/trunk/leipzig/data/mon_wikipedia_2016_100K-sentences.txt",
+            "kind": "txt",
+            "enable": true
+        }
+    ]
+}

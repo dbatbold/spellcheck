@@ -51,7 +51,7 @@ impl Tree {
                         // Last letter
                         node.count += 1;
                     }
-                    break
+                    break;
                 }
                 if i + 1 == node.nodes.len() {
                     // Last node
@@ -69,7 +69,7 @@ impl Tree {
             for i in 0..node.nodes.len() {
                 if letter == node.nodes[i].letter {
                     node = &mut node.nodes[i];
-                    break
+                    break;
                 }
             }
         }
@@ -98,5 +98,12 @@ fn test_parse() {
 fn test_uppercase() {
     let mut tree = Tree::new();
     tree.parse("Abc aBc abC".chars().collect());
+    assert_eq!(3, tree.count("abc"));
+}
+
+#[test]
+fn test_whitespaces() {
+    let mut tree = Tree::new();
+    tree.parse(" \t\r\nabc \t abc \r  abc  \t\n".chars().collect());
     assert_eq!(3, tree.count("abc"));
 }
